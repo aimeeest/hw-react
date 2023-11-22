@@ -1,0 +1,91 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color-scheme: light dark;
+  color: #833b59e0;
+  background-color: #fcf3f0;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothi000000000000000000000000000ng: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  text-align: center;
+  justify-content: center;
+}
+
+form {
+  height: 100%;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+label {
+  font-size: 1rem;
+  line-height: 2.5rem;
+  margin: 1rem;
+}
+
+input {
+  font-family: Inter, sans-serif;
+  color: #5f3236;
+  font-weight: 600;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: #f0d8da;
+  border: none;
+  height: 1.5rem;
+  border-radius: 5px;
+}
+
+input:focus {
+  padding: 6px;
+  outline: none; 
+  background-color: #f1ced1;
+}
+
+button {
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  background-color: #833b59e0;
+  color: white;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #9b4f6ee0;
+}
+
+.error {
+  color: rgb(194, 6, 6);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  list-style: none;
+}
+
+.success {
+  color: #37941b;
+  margin-top: 1rem;
+  padding: 0.3rem 0.3rem;
+  background-color: #c9f5bc;
+  border-radius: 5px;
+}
+
