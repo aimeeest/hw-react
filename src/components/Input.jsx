@@ -1,7 +1,6 @@
-// InputField.js
 import React from 'react';
 
-const InputField = ({ label, name, type, value, onChange }) => {
+const Input = ({ label, name, type, value, onChange }) => {
   return (
     <div>
       <label>{label}:</label>
@@ -10,4 +9,4 @@ const InputField = ({ label, name, type, value, onChange }) => {
   );
 };
 
-export default InputField;
+export default Input;

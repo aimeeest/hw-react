@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import InputField from './components/InputField';
+import Input from './components/Input';
 import MessageDisplay from './components/MessageDisplay';
 
 const RegistrationForm = () => {
@@ -49,9 +49,9 @@ const RegistrationForm = () => {
   return (
     <div className='form'>
       <h2>Registration Form</h2>
-      <InputField label="Username" name="username" type="text" value={formData.username} onChange={handleInputChange} />
-      <InputField label="Password" name="password" type="password" value={formData.password} onChange={handleInputChange} />
-      <InputField label="Confirm Password" name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleInputChange} />
+      <Input label="Username" name="username" type="text" value={formData.username} onChange={handleInputChange} />
+      <Input label="Password" name="password" type="password" value={formData.password} onChange={handleInputChange} />
+      <Input label="Confirm Password" name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleInputChange} />
       <button onClick={handleRegistration}>Register</button>
       
       <MessageDisplay errorMessages={errorMessages} isRegistered={isRegistered} />
