@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import InputField from './components/InputField';
+import MessageDisplay from './components/MessageDisplay';
 
 const RegistrationForm = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+    confirmPassword: '',
+  });
+
   const [errorMessages, setErrorMessages] = useState([]);
   const [isRegistered, setIsRegistered] = useState(false);
 
   const validateInput = () => {
+    const { username, password, confirmPassword } = formData;
     const errors = [];
 
     if (!username || !password || !confirmPassword) {
@@ -25,6 +31,10 @@ const RegistrationForm = () => {
     return errors;
   };
 
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleRegistration = () => {
     const errors = validateInput();
 
@@ -39,35 +49,12 @@ const RegistrationForm = () => {
   return (
     <div className='form'>
       <h2>Registration Form</h2>
-      <div>
-        <label>Username:</label>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </div>
-      <div>
-        <label>Confirm Password:</label>
-        <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-      </div>
+      <InputField label="Username" name="username" type="text" value={formData.username} onChange={handleInputChange} />
+      <InputField label="Password" name="password" type="password" value={formData.password} onChange={handleInputChange} />
+      <InputField label="Confirm Password" name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleInputChange} />
       <button onClick={handleRegistration}>Register</button>
-
-      {errorMessages.length > 0 && (
-        <div className='error'>
-          <ul>
-            {errorMessages.map((error, index) => (
-              <p key={index}>{error}</p>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {isRegistered && (
-        <div className='success'>
-          <p>✅ Registration Successful!</p>
-        </div>
-      )}
+      
+      <MessageDisplay errorMessages={errorMessages} isRegistered={isRegistered} />
     </div>
   );
 };
